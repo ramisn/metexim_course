@@ -56,6 +56,11 @@
               </button>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Edit Profile", edit_user_registration_path %></a></li>
+                <% if current_user.role == 'admin' %>
+                <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Add Course", new_course_path %></a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Add Syllabus", new_syllabus_path %></a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Add Chapter", new_chapter_path %></a></li>
+                <% end %>
                 <li role="presentation"><a role="menuitem" tabindex="-1"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></a></li>
               </ul>
             </div>
@@ -63,7 +68,6 @@
             <ul class="nav">
               <li><%= link_to "Register", new_user_registration_path  %></li>
               <li><%= link_to "Sign in", new_user_session_path %></li>
-              <li><%= link_to "Login with Facebook", "/path3"  %></li>
             </ul>
            <% end %> 
           </div><!--/.nav-collapse -->
