@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class="course">
+  <div class="table-responsive"> 
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>About the Course</th>
+          <th>Duration of Course (Hours)</th>
+          <th>Syllabus Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+	        <td><%= @course.name %></td>
+	        <td><%= @course.description %></td>
+	        <td><%= @course.duration %></td>
+	        <td><%= link_to 'Syllabus', syllabus_path, :class => 'btn btn-mini' %></td>
+	      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'Back to Course', courses_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,8 @@
+<div style="margin-top: 50px;">
+<h1>Welcome to Metexim</h1>
+<p>Here You can find Awesome Courses, Syllabuses and their Chapters</p>
+
+<% if current_user %>
+<p><%= link_to "Available Courses", courses_path, :class => 'btn btn-primary' %></p>
+<% end %>
+</div>

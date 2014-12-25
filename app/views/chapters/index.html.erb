@@ -1,0 +1,32 @@
+<h1 style="align:center">Chapters</h1>
+<div class="course">
+    <div class="table-responsive"> 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Chapter Name</th>
+                    <th>About the Chapter</th>
+                    <th>Chapter Details</th>
+                </tr>
+            </thead>
+            <tbody>
+    <% @chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.name %></td>
+        <td><%= chapter.description %></td>
+        <td><%= link_to 'Show', chapter, :class => 'btn btn-mini' %></td>
+        <% if current_user.role == 'admin' %>
+        <td><%= link_to 'Edit', edit_chapter_path(chapter), :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<% if current_user.role == 'admin' %>
+<%= link_to 'New Chapter', new_chapter_path, :class => 'btn btn-primary' %><br><br>
+<%= link_to 'Back to Course', courses_path, :class => 'btn btn-primary' %>
+<% end %>

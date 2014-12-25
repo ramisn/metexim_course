@@ -1,0 +1,35 @@
+<h1>Syllabuses</h1>
+<div class="course">
+    <div class="table-responsive"> 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>About the Course</th>
+                    <th>Duration of Course (Hours)</th>
+                    <th>Course Details</th>
+                </tr>
+            </thead>
+            <tbody>
+    <% @syllabuses.each do |syllabus| %>
+      <tr>
+        <td><%= syllabus.name %></td>
+        <td><%= syllabus.description %></td>
+        <td><%= syllabus.duration %></td>
+        <td><%= link_to 'Show', syllabus, :class => 'btn btn-mini' %></td>
+        <% if current_user.role == 'admin' %>
+        <td><%= link_to 'Edit', edit_syllabus_path(syllabus), :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Destroy', syllabus, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+        </table>
+    </div>
+</div>
+
+<br>
+<% if current_user.role == 'admin' %>
+<%= link_to 'New Syllabus', new_syllabus_path, :class => 'btn btn-primary' %><br><br>
+<%= link_to 'Back to Course', courses_path, :class => 'btn btn-primary' %>
+<% end %>
