@@ -16,8 +16,7 @@
  */
  @import "bootstrap";
 
-<style>
-	/* CSS Document */
+/* CSS Document */
 
 /* ---------- FONTAWESOME ---------- */
 /* ---------- http://fortawesome.github.com/Font-Awesome/ ---------- */
@@ -118,4 +117,3 @@ input {
 #login fieldset input[type="submit"]:hover {
 	/*background-color: #28ad63;*/
 }
-</style>
