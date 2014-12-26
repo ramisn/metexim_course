@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Metexim Application is a Simple Course application for a Educational Institute.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
+* Ruby and Rails version
+  2.0.0 and 4.1.1
 * Database creation
+  MySQL and Postgres(Production)
 
-* Database initialization
+* Run Instructions
 
-* How to run the test suite
+git clone https://github.com/ramisn/metexim_course.git
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle install
 
-* Deployment instructions
+rake db:create
+rake db:migrate
+rake db:seed
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+rails server
